@@ -1,4 +1,3 @@
-
 function encodeTaskProperties(omnifocusTask) {
 	return {
 		name: encodeURIComponent(omnifocusTask.name),
@@ -12,7 +11,7 @@ function triggerActionUrl( url ) {
 
 var senders = {
 	app: function(config, encodedTask) {
-		triggerActionUrl('omnifocus:///add?name='+encodedTask.name+'&note='+encodedTask.note);
+		triggerActionUrl('thehitlist:///inbox/task?method=POST&title='+encodedTask.name+'&notes='+encodedTask.note);
 	},
 	maildrop: function(config, encodedTask) {
 		triggerActionUrl("mailto:"+config.address+"@sync.omnigroup.com?subject="+encodedTask.name+"&body="+encodedTask.note);
