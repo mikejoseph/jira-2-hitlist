@@ -16,7 +16,7 @@ $(function() {
 		});
 	}
 
-	var $sendButton = $("<a id=\"send-to-omnifocus\">Send to OmniFocus &raquo;</a>");
+	var $sendButton = $("<a id=\"send-to-thl\">Send to The Hit List &raquo;</a>");
 	$sendButton.prependTo( "#viewissuesidebar" );
 
 	$sendButton.on('click', function( evt ) {

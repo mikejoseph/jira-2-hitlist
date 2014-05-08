@@ -1,7 +1,7 @@
-function encodeTaskProperties(omnifocusTask) {
+function encodeTaskProperties(task) {
 	return {
-		name: encodeURIComponent(omnifocusTask.name),
-		note: encodeURIComponent(omnifocusTask.note)
+		name: encodeURIComponent(task.name),
+		note: encodeURIComponent(task.note)
 	}
 }
 
@@ -11,10 +11,7 @@ function triggerActionUrl( url ) {
 
 var senders = {
 	app: function(config, encodedTask) {
-		triggerActionUrl('thehitlist:///inbox/task?method=POST&title='+encodedTask.name+'&notes='+encodedTask.note);
-	},
-	maildrop: function(config, encodedTask) {
-		triggerActionUrl("mailto:"+config.address+"@sync.omnigroup.com?subject="+encodedTask.name+"&body="+encodedTask.note);
+		triggerActionUrl('thehitlist:///inbox/tasks?method=POST&title='+encodedTask.name+'&notes='+encodedTask.note);
 	}
 }
 
